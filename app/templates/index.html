@@ -1,31 +1,22 @@
 {%extends 'base.html'%}
 
+
 {%block head%}
-<title>Home</title>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-<link rel="stylesheet" href="static/indexPage.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
 {%endblock%}
 
 {%block body%}
-<nav>
-  <div class="nav-center">
-    <div class="nav-header">
-      <h3>SCT Wall</h3>
-      <button class="nav-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-    <ul class="links">
-      <li>
-        <a href="#" class="" id="homeButton">Home</a>
-      </li>
-      <li>
-        <a href="#" id="loginButton">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<script src="static/indexPage.js"></script>
+<div class="header">
+    <nav>
+        <div class="logo">
+            SCT Wall
+        </div>
+        <div class="links">
+            <button class="login btn">Login</button>
+        </div>
+    </nav>
+</div>
 {%endblock%}

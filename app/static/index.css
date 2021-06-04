@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.logo{
+    font: 3rem 'Racing Sans One', cursive;
+
+}
+.links{
+    display: flex;
+    align-items: center;
+}
+.links button{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: fit-content;
+}
+.links button:hover{
+    background-color: black;
+    color: white
+}
+.header{
+    width: 100%;
+    height: 500px;
+    background-color: red;
+}
