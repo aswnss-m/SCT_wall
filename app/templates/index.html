@@ -1,78 +1,53 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
 
-{%block head%}
+{% block head %}
     <title>Home</title>
     <link rel="stylesheet" href="static/index.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
-{%endblock%}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+            {% endblock %}
 
-{%block body%}
-<div class="header parallax">
-    <nav>
-        <div class="logo">
-            SCT Wall
-        </div>
-        <div class="links">
-            <button class="login btn">Login</button>
-        </div>
-    </nav>
-</div>
+{% block body %}
+                <div class="header parallax">
+                    <nav>
+                        <div class="logo">
+                            SCT Wall
+                        </div>
+                        <div class="links">
+                            <button class="login btn">Login</button>
+                        </div>
+                    </nav>
+                </div>
 
+                <!-- Content -->
 <div class="content">
-    <div class="hero">
-        <div class="btn-box">
-            <button id="btn1" onClick="openone()">PlaceHolder</button>
-            <button id="btn2" onClick="opentwo()">PlaceHolder</button>
-            <button id="btn3" onClick="openthree()">PlaceHolder</button>
-        </div>
-        <div id="item1" class="items">
-                <h1>All</h1>
-                <div class="card" style="width: 18rem;">
-                    <img src="/Assets/images/4643b540-9273-426f-8857-29fc26a9ec4d.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="/Assets/images/4643b540-9273-426f-8857-29fc26a9ec4d.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 18rem;">
-                    <img src="/Assets/images/4643b540-9273-426f-8857-29fc26a9ec4d.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-        </div>
-        <div id="item2" class="items">
-                <h1>Heading Place holeder2</h1>
-                <p>
-                    In this tutorial you will learn to make a tab layout on website using HTML and CSS 
-                    Step by step with explanation. Please like this tutorial and subscribe channel to watch more 
-                    video on HTML and CSS website development and UI Designing.
-                </p>
-        </div>
-        <div id="item3" class="items">
-                <h1>Heading Place holeder3</h1>
-                <p>
-                    In this tutorial you will learn to make a tab layout on website using HTML and CSS 
-                    Step by step with explanation. Please like this tutorial and subscribe channel to watch more 
-                    video on HTML and CSS website development and UI Designing.
-                </p>
-        </div>
-    </div>
-</div>
+                    {%for i in range(1,16,2)%}
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mr-1">
+                          <div class="card" style="width: 18rem;">
+                              <img src="/static/images/{{images[i]}}.jpeg" alt="" srcset="">
+                            <div class="card-body">
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mt-1 mr-1">
+                          <div class="card"  style="width: 18rem;">
+                              <img src="/static/images/{{images[i+1]}}.jpeg" alt="" srcset="">
+                            <div class="card-body">
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                    <!-- Content -->
 
-<div class="footer"></div>
-<script src="static/index.js"></script>
-{%endblock%}
+                    <div class="footer"></div>
+                    <script src="static/index.js"></script>
+                {% endblock %}
