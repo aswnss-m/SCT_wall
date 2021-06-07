@@ -6,14 +6,41 @@
 
     <form>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1"></div>
-            
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <legend>About Event</legend>
+            <label for="Event">Name of the Event</label>
+            <input type="text" class="form-control" id="eventName" required>
+            <label for="Organizer">Organized By</label>
+            <select class="form-control" id="organizer">
+                <option value="IEEE_SCTSB">IEEE SCTSB</option>
+                <option value="IEEE">IEEE (Other College)</option>
+                <option value="NSS_SCTCE">NSS SCT</option>
+                <option value="NSS">NSS (Other College)</option>
+                <option value="Lanscape">Lanscape</option>
+                <option value="Aerospace">Aerospace</option>
+                <option value="SFI">SFI</option>
+                <option value="KSU">KSU</option>
+                <option value="AVBP">AVBP</option>
+                <option value="Others">OTHER</option>
+            </select>
+            <label for="eventPoster">Poster File</label>
+            <input type="file" name="eventPoster" id="eventPoster" class="form-control" required>
+
+            <label for="startDate">Start Date</label>
+            <input type="date" name="startDate" id="startDate" class="from-control">
+            <label for="startDate" >End Date</label>
+            <input type="date" name="endDate" id="endDate" class="from-control" required>
+        </div>
+        <div class="form-group">
+            <legend>Contact</legend>
+            <label for="regLink">Registration Link</label>
+            <input type="text" class="form-control" name="regLink" placeholder="optional">
+            <label for="contactNumber">Contact Number 1:</label>
+            <input type="text" class="form-control" name="contactOne" required>
+            <label for="contactNumber">Contact Number 2:</label>
+            <input type="text" class="form-control" name="contactTwo" placeholder="optional">
+
+        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-outline-danger">Clear</button>
             </form>
         {% endblock %}

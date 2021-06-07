@@ -16,6 +16,9 @@ class Events(db.Model):
     contact1 = db.Column(db.String(10))
     contact2 = db.Column(db.String(10))
 
+    def __repr__():
+        return self.organiser +" "+ str(self.id)
+
 images = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q']
 @app.route('/')
 @app.route('/home')
