@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="static/forms.css">
+{% endblock %}
 
 {% block body %}
 
-    <form>
+  <div class="master">
+    <form action='submit()' class="form-control">
         <div class="form-group">
             <legend>About Event</legend>
             <label for="Event">Name of the Event</label>
-            <input type="text" class="form-control" id="eventName" required>
+            <input type="text" class="form-control" id="eventName" name="eventName" required>
             <label for="Organizer">Organized By</label>
-            <select class="form-control" id="organizer">
+            <select class="form-control" id="organizer" name="organizer">
                 <option value="IEEE_SCTSB">IEEE SCTSB</option>
                 <option value="IEEE">IEEE (Other College)</option>
                 <option value="NSS_SCTCE">NSS SCT</option>
@@ -24,11 +27,18 @@
             </select>
             <label for="eventPoster">Poster File</label>
             <input type="file" name="eventPoster" id="eventPoster" class="form-control" required>
-
+            <label for="eventDetails">Details :</label>
+            <textarea name="eventDetails" id="eventDetails" cols="30" rows="10" class="form-control"></textarea>
             <label for="startDate">Start Date</label>
-            <input type="date" name="startDate" id="startDate" class="from-control">
+            <span class="datepicker-toggle">
+                <span class="datepicker-toggle-button"></span>
+                <input type="date" class="datepicker-input" name="startDate">
+              </span>
             <label for="startDate" >End Date</label>
-            <input type="date" name="endDate" id="endDate" class="from-control" required>
+            <span class="datepicker-toggle">
+                <span class="datepicker-toggle-button"></span>
+                <input type="date" class="datepicker-input" name="endDate">
+              </span>
         </div>
         <div class="form-group">
             <legend>Contact</legend>
@@ -40,7 +50,15 @@
             <input type="text" class="form-control" name="contactTwo" placeholder="optional">
 
         </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-outline-danger">Clear</button>
-            </form>
+        <div style="margin: 5px 0;">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button type="reset" class="btn btn-warning btn-lg" >Clear</button>
+        </div>
+    </form>
+  </div>
+  <script>
+    function submit(){
+      alert("Done");
+    }
+  </script>
         {% endblock %}
