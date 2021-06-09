@@ -8,7 +8,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
             {% endblock %}
 
-{% block body %}
+            {% block body %}
                 <div class="header parallax">
                     <nav>
                         <div class="logo">
@@ -22,30 +22,20 @@
 
                 <!-- Content -->
 <div class="content">
-                    {%for i in range(1,16,2)%}
-                    <div class="row">
-                        <div class="col-md-6 mt-1 mr-1">
-                          <div class="card" style="width: 18rem;">
-                              <img src="/static/images/{{images[i]}}.jpeg" alt="" srcset="">
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                    {% for i in range(1,16) %}
+                        <div class="cardContainer">
+                            <div class="card">
+                                <div class="card-image card-image-bg">
+                                    <img src="/static/images/{{ images[i] }}.jpeg" alt="eventPoster" class="eventPoster"></div>
+                                    <div class="card-title">
+                                        <h1>Title Goes Here</h1>
+                                    </div>
+                                    <div class="card-details"></div>
+                                    <button class="card-button"></button>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6 mt-1 mr-1">
-                          <div class="card"  style="width: 18rem;">
-                              <img src="/static/images/{{images[i+1]}}.jpeg" alt="" srcset="">
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                        {% endfor %}
+                      </div>
                     <!-- Content -->
 
                     <div class="footer"></div>

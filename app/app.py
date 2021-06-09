@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 class Events(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     event_name = db.Column(db.String(100), nullable=False,primary_key=True)
-    event_details = db.Column(db.String(500), nullable=False,nullable=False)
+    event_details = db.Column(db.String(500),nullable=False)
     organiser = db.Column(db.String(32), nullable=False)
     Start_date = db.Column(db.DateTime, nullable=False, default= datetime.utcnow)
     End_date = db.Column(db.DateTime, nullable=False)
@@ -37,6 +37,11 @@ def form():
         evntEndDt = request.form['endDate']
         evtLnk = request.form['regLink']
         evtCtc =[request.form['contactOne'],request.form['contactTwo']] 
+        
+        new_event = Events(event_name=evtTitle,event_details=evtDtls,organiser=evtOrg,Start_date=evntStrDt,End_date=evntEndDt,Link=evtLnk,contact1=evtCtc[0],contact2=evtCtc[1])
+
+        db.session.add(new_event)
+        db.session.commit()
         
     return render_template('form.html')
  
